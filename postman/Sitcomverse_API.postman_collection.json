@@ -1,0 +1,647 @@
+{
+	"info": {
+		"_postman_id": "fc1b2c3a-eb5d-4b9f-8097-e1ec094331da",
+		"name": "Sitcomverse_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46063373",
+		"_collection_link": "https://benjah-8280959.postman.co/workspace/Benjah's-Workspace~bc0b3f9f-f520-421e-8625-d332294931a2/collection/46063373-fc1b2c3a-eb5d-4b9f-8097-e1ec094331da?action=share&source=collection_link&creator=46063373"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mytestuser2\",\r\n    \"email\": \"mytest2@example.com\",\r\n    \"password\": \"mypassword123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"mytestuser2\",\r\n    \"password\": \"mypassword123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Protected Route",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTkwMDk5NSwianRpIjoiNDViOGJlNDQtMzM0YS00YTk2LWE4NDQtNzYxOTE2MTlkYjU3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTE5MDA5OTUsImNzcmYiOiJkMjI4MzA4Zi1iNTQ0LTQ0MjEtYmI2Ni1kOTU2MDQxODdmZGYiLCJleHAiOjE3NTE5MDE4OTV9.GJkhI4a5-bvl7M_-MFBghMxnqDXyGZVR8rNiVNCNcec",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/auth/protected",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Sitcom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjA4NDIzMiwianRpIjoiMTJmZTJmZTQtZWFjZC00Njk5LTk2ZGEtNjY3NjE4MThmNmRiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NTIwODQyMzIsImNzcmYiOiJlODcyNjU0Mi1iYTU2LTRlOTQtYTdmZi03MzY3OWJiNTVlZGQiLCJleHAiOjE3NTIwODc4MzJ9.3WY8sEada03Gc2MoCrvrIV_2nuRDkZaE_YDz3rUi4lE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Brooklyn Nine-Nine\",\r\n    \"creator\": \"Dan Goor, Michael Schur\",\r\n    \"genre\": \"police procedural\",\r\n    \"years_active\": \"2013-2021\",\r\n    \"number_of_seasons\": 8,\r\n    \"synopsis\": \"Brooklyn Nine-Nine is a comedy series centered around the detectives of the 99th precinct in Brooklyn, New York.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Sitcoms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Sitcom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Sitcom",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTkwMjI1NiwianRpIjoiM2NlZmRkNDItZGZhMy00Mzk2LWE5N2MtZTI0ZmIzZGJiYzM3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTE5MDIyNTYsImNzcmYiOiJmODg1MzQ1ZS01ZmYxLTQ0MDMtODMyOC1mMzQ3YjM2Mzg0ZjkiLCJleHAiOjE3NTE5MDU4NTZ9.yzLVWbNgZpvygpGV2WEJfddhAI2bv1rgBE9Werbt6xE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Sitcom",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTkwMjI1NiwianRpIjoiM2NlZmRkNDItZGZhMy00Mzk2LWE5N2MtZTI0ZmIzZGJiYzM3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTE5MDIyNTYsImNzcmYiOiJmODg1MzQ1ZS01ZmYxLTQ0MDMtODMyOC1mMzQ3YjM2Mzg0ZjkiLCJleHAiOjE3NTE5MDU4NTZ9.yzLVWbNgZpvygpGV2WEJfddhAI2bv1rgBE9Werbt6xE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"synopsis\": \"Updated synopsis: A mockumentary on three different, but related, families facing trials and tribulations in their own comedic way. (IMDb)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Character",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTk5MTMwNiwianRpIjoiMDcxMTJjNzctMDhjMC00ZGE5LThiNmQtZWEzMjQ0OWQ5MmI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTE5OTEzMDYsImNzcmYiOiJmMzM5OGEzYy0zYTQ5LTQ5ZTctYjYwYS1kNzUyNTIwNmI4NDAiLCJleHAiOjE3NTE5OTQ5MDZ9.T-Ts9r5jmbe8ByJATmobtDfZvXwleshNEgxUNFXb4Kg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Claire Dunphy\",\r\n    \"actor\": \"Julie Bowen\",\r\n    \"role\": \"Lead\",\r\n    \"description\": \"A stay-at-home mother of three who is very competitive, strict about cleanliness, and loves Halloween.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/characters",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Characters",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTk5MTMwNiwianRpIjoiMDcxMTJjNzctMDhjMC00ZGE5LThiNmQtZWEzMjQ0OWQ5MmI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTE5OTEzMDYsImNzcmYiOiJmMzM5OGEzYy0zYTQ5LTQ5ZTctYjYwYS1kNzUyNTIwNmI4NDAiLCJleHAiOjE3NTE5OTQ5MDZ9.T-Ts9r5jmbe8ByJATmobtDfZvXwleshNEgxUNFXb4Kg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Claire Dunphy\",\r\n    \"actor\": \"Julie Bowen\",\r\n    \"role\": \"Lead\",\r\n    \"description\": \"A stay-at-home mother of three who is very competitive, strict about cleanliness, and loves Halloween.\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/characters",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Character",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTk5MTMwNiwianRpIjoiMDcxMTJjNzctMDhjMC00ZGE5LThiNmQtZWEzMjQ0OWQ5MmI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTE5OTEzMDYsImNzcmYiOiJmMzM5OGEzYy0zYTQ5LTQ5ZTctYjYwYS1kNzUyNTIwNmI4NDAiLCJleHAiOjE3NTE5OTQ5MDZ9.T-Ts9r5jmbe8ByJATmobtDfZvXwleshNEgxUNFXb4Kg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Claire Dunphy\",\r\n    \"actor\": \"Julie Bowen\",\r\n    \"role\": \"Lead\",\r\n    \"description\": \"A stay-at-home mother of three who is very competitive, strict about cleanliness, and loves Halloween.\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/characters/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"characters",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Character",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTk5MTMwNiwianRpIjoiMDcxMTJjNzctMDhjMC00ZGE5LThiNmQtZWEzMjQ0OWQ5MmI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTE5OTEzMDYsImNzcmYiOiJmMzM5OGEzYy0zYTQ5LTQ5ZTctYjYwYS1kNzUyNTIwNmI4NDAiLCJleHAiOjE3NTE5OTQ5MDZ9.T-Ts9r5jmbe8ByJATmobtDfZvXwleshNEgxUNFXb4Kg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Matriarch of the family and overall decision-maker, She provides her family with a leader and makes the logical decisions for the household. (teamsixteamjournal.wordpress)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/characters/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"characters",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Character",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MTk5MTMwNiwianRpIjoiMDcxMTJjNzctMDhjMC00ZGE5LThiNmQtZWEzMjQ0OWQ5MmI4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTE5OTEzMDYsImNzcmYiOiJmMzM5OGEzYy0zYTQ5LTQ5ZTctYjYwYS1kNzUyNTIwNmI4NDAiLCJleHAiOjE3NTE5OTQ5MDZ9.T-Ts9r5jmbe8ByJATmobtDfZvXwleshNEgxUNFXb4Kg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/characters/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"characters",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjA4NDIzMiwianRpIjoiMTJmZTJmZTQtZWFjZC00Njk5LTk2ZGEtNjY3NjE4MThmNmRiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3NTIwODQyMzIsImNzcmYiOiJlODcyNjU0Mi1iYTU2LTRlOTQtYTdmZi03MzY3OWJiNTVlZGQiLCJleHAiOjE3NTIwODc4MzJ9.3WY8sEada03Gc2MoCrvrIV_2nuRDkZaE_YDz3rUi4lE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"score\": 2,\r\n    \"text\": \"This show is the WORST. I gave it 2 stars just because I feel bad for the actors for spending 11 years at a crappy job.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/reviews",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/reviews",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Review",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/reviews/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Review",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjAyMDM3MSwianRpIjoiYTZlNTBiYzctMTlkZS00NTVjLTgwYzEtOTZiNDE4OGZlOTExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTIwMjAzNzEsImNzcmYiOiI2ZjdiZDEzNi0yYzRhLTRlNGQtYWE3Mi1lNGYyNmU5ZjY3NjYiLCJleHAiOjE3NTIwMjM5NzF9.9CG-McUGRAZB271SYsMcDqAUkIdeeXh233y41wX-7qI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"score\": 4,\r\n    \"text\": \"Hilarious and heart-warming but it ends :(\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/reviews/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Review",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1MjAyMDM3MSwianRpIjoiYTZlNTBiYzctMTlkZS00NTVjLTgwYzEtOTZiNDE4OGZlOTExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NTIwMjAzNzEsImNzcmYiOiI2ZjdiZDEzNi0yYzRhLTRlNGQtYWE3Mi1lNGYyNmU5ZjY3NjYiLCJleHAiOjE3NTIwMjM5NzF9.9CG-McUGRAZB271SYsMcDqAUkIdeeXh233y41wX-7qI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sitcoms/2/reviews/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sitcoms",
+						"2",
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
