@@ -98,12 +98,14 @@ python run.py
 Postman is a powerful tool for interacting with and testing the API endpoints.
 
 1. **Download and Install Postman:** If you don't have it, download Postman from https://www.postman.com/downloads/.
+
 2. **Import the Postman Collection JSON file:**
     - Download the Postman Collection JSON file from the repository: postman/Sitcomverse_API.postman_collection.json
     - Open Postman.
     - Click the Import button in the top-left corner.
     - Select File and choose the downloaded *Sitcomverse_API.postman_collection.json* file.
     - Click Import. This will add a collection named "SitcomVerse API" (or similar) to your Postman sidebar, containing all pre-configured requests.
+
 3. **Using Pre-Configured Requests**  
 Once the collection is imported, you can immediately start testing:
     - **Expand the Collection:** In the left sidebar, expand the "SitcomVerse API" collection.
@@ -111,6 +113,7 @@ Once the collection is imported, you can immediately start testing:
     - **Execute a Request:** Simply click on the desired request (e.g., POST Register User).
     - **Update Placeholders:** For requests requiring dynamic data (like access_token after login, or specific sitcom_id/character_id/review_id), remember to update the placeholder values in the URL or Headers/Body tab as needed.
     - **Send Request:** Click the blue Send button to execute the request and view the response in the lower panel.
+
 3. **Creating Your Own Requests (Manual Testing):**  
 If you prefer to build requests from scratch or want to experiment further:
     - **Start a New Request:** Click the + icon in Postman to create a new HTTP Request.
@@ -122,6 +125,18 @@ If you prefer to build requests from scratch or want to experiment further:
     - **Add Headers (for Authentication):**
         * For protected endpoints, go to the Headers tab.* Add a Key of Authorization and a Value of Bearer <your_access_token>.
     - **Send Request:** Click Send to execute.
+
+4. **Testing with a Web Browser (Limited)**  
+You can also test GET endpoints directly in your web browser, though this method is limited to GET requests and doesn't easily support custom headers (like Authorization tokens) or request bodies.
+    - **Access Base URL:** Open your web browser and navigate to the base URL: http://127.0.0.1:5000
+    - You should see the personalized welcome message.
+    - **Test Public GET Endpoints:**
+        + To view all sitcoms: http://127.0.0.1:5000/api/sitcoms
+        + To view a specific sitcom (replace {sitcom_id} with an actual ID, e.g., 1): http://127.0.0.1:5000/api/sitcoms/1
+        + To view characters for a sitcom: http://127.0.0.1:5000/api/sitcoms/1/characters
+        + To view reviews for a sitcom: http://127.0.0.1:5000/api/sitcoms/1/reviews
+    
+    **Limitations:** This method is primarily for viewing public data. For POST, PUT, DELETE requests, or GET requests requiring authentication, Postman (or a similar API client) is necessary.
 
 **Important:** Ensure your Flask API is running (python run.py) before sending any requests.
 
